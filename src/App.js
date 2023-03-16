@@ -1,10 +1,24 @@
+// import Header from "./components/Layout/Header";
+
+// function App() {
+//   return (
+//     <>
+//       <Header />
+//     </>
+//   );
+// }
+
+// export default App;
+
+import { Fragment } from "react";
+
 import Header from "./components/Layout/Header";
 
 function App() {
   return (
-    <>
+    <Fragment>
       <Header />
-    </>
+    </Fragment>
   );
 }
 
