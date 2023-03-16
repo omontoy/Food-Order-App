@@ -1,24 +1,14 @@
-// import Header from "./components/Layout/Header";
-
-// function App() {
-//   return (
-//     <>
-//       <Header />
-//     </>
-//   );
-// }
-
-// export default App;
-
-import { Fragment } from "react";
-
 import Header from "./components/Layout/Header";
+import Meals from "./components/Meals/Meals";
 
 function App() {
   return (
-    <Fragment>
+    <>
       <Header />
-    </Fragment>
+      <main>
+        <Meals />
+      </main>
+    </>
   );
 }
 
