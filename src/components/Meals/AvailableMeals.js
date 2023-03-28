@@ -5,9 +5,11 @@ import MealItem from "./MealItem/MealItem";
 
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMeals = async () => {
+      setLoading(true);
       const response = await fetch(
         "https://food-order-app-fb348-default-rtdb.firebaseio.com/meals.json"
       );
@@ -25,10 +27,19 @@ const AvailableMeals = () => {
       }
 
       setMeals(loadedMeals);
+      setLoading(false);
     };
 
     fetchMeals();
   }, []);
+
+  if (loading) {
+    return (
+      <section className={classes.mealsLoading}>
+        <p>Fetching Meals...</p>
+      </section>
+    );
+  }
 
   const mealsList = meals.map((meal) => (
     <MealItem
